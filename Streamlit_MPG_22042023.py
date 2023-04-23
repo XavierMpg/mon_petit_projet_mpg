@@ -41,7 +41,7 @@ unsafe_allow_html=True)
         
 # Page Source de Données MPGStats
 def source():
-    st.write('<p style="color:blue;font-size: 40px;"><b>Ma Petite 
+    st.write('<p style="color:blue;font-size: 40px;"><b>Ma Petite Source</b></p>', unsafe_allow_html=True)
     st.write("Accès au site Source de nos données MPGstats")
     if st.button('Ma Petite Source de Données'):
         webbrowser.open_new_tab('https://www.mpgstats.fr/')
@@ -50,7 +50,7 @@ def source():
 # Page Echantillon Dataset
 def echantillon():
     st.write('<p style="color:red;font-size: 40px;"><b>Mon Petit Echantillon</b></p>', unsafe_allow_html=True)
-    #st.image("https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/MPG%20confettis.png", width=300)
+    st.image("https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/MPG%20confettis.png", width=300)
     csv_path = 'https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/dataset_mpg.csv'
     if st.button('Charger Mon Petit Exemple de Dataset MPG'):
         df = pd.read_csv(csv_path)
