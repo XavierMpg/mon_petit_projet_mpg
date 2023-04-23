@@ -198,15 +198,15 @@ def entrain():
     if att_button:
 
 # Charger les dataframes sur lesquels appliquer le modèle
-        df_att = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_att_to_upload.csv',index_col=0)
+        df_att = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_att_to_upload.csv',index_col=0)
 
 # Charger le modèle à partir du fichier.pkl
-        with open('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/model_att.pkl', 'rb') as f:
+        with open('model_att.pkl', 'rb') as f:
             model_att = pickle.load(f)
 
         predictions_att = model_att.predict(df_att)
 
-        df_att_output = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_attack_mpg_v210423.csv',index_col=0)
+        df_att_output = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_attack_mpg_v210423.csv',index_col=0)
 
         df_att_output['cote_predite'] = predictions_att
         df_att_output['+/- value'] = df_att_output['cote_predite'] - df_att_output['Cote']
@@ -217,15 +217,15 @@ def entrain():
 # Si le bouton des défenseurs est cliqué
     if def_button:
 # Charger les dataframes sur lesquels appliquer le modèle
-        df_def = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_def_to_upload.csv',index_col=0)
+        df_def = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_def_to_upload.csv',index_col=0)
 
 # Charger le modèle à partir du fichier.pkl
-        with open('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/model_def.pkl', 'rb') as f:
+        with open('model_def.pkl', 'rb') as f:
             model_def = pickle.load(f)
 
         predictions_def = model_def.predict(df_def)
 
-        df_def_output = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_defense_mpg_v210423.csv',index_col=0)
+        df_def_output = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_defense_mpg_v210423.csv',index_col=0)
 
         df_def_output['cote_predite'] = predictions_def
         df_def_output['+/- value'] = df_def_output['cote_predite'] - df_def_output['Cote']
@@ -245,15 +245,15 @@ def pepite():
 
     # Si le bouton des gardiens de but est cliqué
     if gkbest_button:
-        df_gk = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_gk_to_upload.csv',index_col=0)
+        df_gk = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_gk_to_upload.csv',index_col=0)
 
 # Charger le modèle à partir du fichier.pkl
-        with open('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/model_gk.pkl', 'rb') as f:
+        with open('model_gk.pkl', 'rb') as f:
              model_gk = pickle.load(f)
 
         predictions_gk = model_gk.predict(df_gk)
         
-        df_gk_output = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_goalkeeper_mpg_v210423.csv',index_col=0)
+        df_gk_output = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_goalkeeper_mpg_v210423.csv',index_col=0)
         df_gk_output['cote_predite'] = predictions_gk
         df_gk_output['+/- value'] = df_gk_output['cote_predite'] - df_gk_output['Cote']
         # Afficher les 5 meilleurs gardiens de but
@@ -262,15 +262,15 @@ def pepite():
 
     # Si le bouton des attaquants est cliqué
     if attbest_button:
-        df_att = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_att_to_upload.csv',index_col=0)
+        df_att = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_att_to_upload.csv',index_col=0)
 
 # Charger le modèle à partir du fichier.pkl
 
-        with open('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/model_att.pkl', 'rb') as f:
+        with open('model_att.pkl', 'rb') as f:
             model_att = pickle.load(f)
 
         predictions_att = model_att.predict(df_att)
-        df_att_output = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_attack_mpg_v210423.csv',index_col=0)
+        df_att_output = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_attack_mpg_v210423.csv',index_col=0)
         df_att_output['cote_predite'] = predictions_att
         df_att_output['+/- value'] = df_att_output['cote_predite'] - df_att_output['Cote']
         # Afficher les 5 meilleurs attaquants
@@ -279,15 +279,15 @@ def pepite():
 
     # Si le bouton des défenseurs est cliqué
     if defbest_button:
-        df_def = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_def_to_upload.csv',index_col=0)
+        df_def = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_def_to_upload.csv'',index_col=0)
 
 # Charger le modèle à partir du fichier.pkl
-        with open('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/model_def.pkl', 'rb') as f:
+        with open('model_def.pkl', 'rb') as f:
             model_def = pickle.load(f)
 
         predictions_def = model_def.predict(df_def)
 
-        df_def_output = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_defense_mpg_v210423.csv',index_col=0)
+        df_def_output = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_defense_mpg_v210423.csv',index_col=0)
         df_def_output['cote_predite'] = predictions_def
         df_def_output['+/- value'] = df_def_output['cote_predite'] - df_def_output['Cote']
         # Afficher les 5 meilleurs attaquants
