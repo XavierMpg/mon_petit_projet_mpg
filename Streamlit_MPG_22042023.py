@@ -27,7 +27,7 @@ def home():
 def equipe():
     st.write('<p style="color:red;font-size: 40px;"><b>Ma Petite Equipe</b></p>', 
 unsafe_allow_html=True)
-    st.image("/Users/benbastian/Desktop/Streamlit MPG/assets/ZZ PG.png", width=300)
+    st.image("https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/ZZ%20PG.png", width=300)
     
     col1, col2 = st.columns(2)
     
@@ -45,12 +45,12 @@ def source():
     st.write("Accès au site Source de nos données MPGstats")
     if st.button('Ma Petite Source de Données'):
         webbrowser.open_new_tab('https://www.mpgstats.fr/')
-    st.image("https://github.com/XavierMpg/mon_petit_projet_mpg/blob/9db970e1b261b752f0353e15d4145a14641dd311/MPG%20Stade.png", width=300)
+    st.image("https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/MPG%20Stade.png", width=300)
     
 # Page Echantillon Dataset
 def echantillon():
     st.write('<p style="color:red;font-size: 40px;"><b>Mon Petit Echantillon</b></p>', unsafe_allow_html=True)
-    #st.image("C:\Users\xavie\Documents\assets\MPG confettis.png", width=300)
+    #st.image("https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/MPG%20confettis.png", width=300)
     csv_path = 'https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/dataset_mpg.csv'
     if st.button('Charger Mon Petit Exemple de Dataset MPG'):
         df = pd.read_csv(csv_path)
@@ -140,32 +140,32 @@ def data():
     st.write("Téléchargement des datas à jour")
     if st.button('LIGUE 1'):
         webbrowser.open_new_tab('https://www.mpgstats.fr/top/Ligue-1/custom')
-    st.image("/https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/ligue%201.png", width=100)
+    st.image("https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/ligue%201.png", width=100)
     if st.button('PREMIER LEAGUE'):
         webbrowser.open_new_tab('https://www.mpgstats.fr/top/Premier-League/custom')
-    st.image("https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/premier%20league.png", width=100)
+    st.image("https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/premier%20league.png", width=100)
     if st.button('LIGA'):
         webbrowser.open_new_tab('https://www.mpgstats.fr/top/Liga/custom')
-    st.image("https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/liga.png", width=100)
+    st.image("https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/liga.png", width=100)
     if st.button('SERIE A'):
         webbrowser.open_new_tab('https://www.mpgstats.fr/top/Serie-A/custom')
-    st.image("/https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/serie%20A.png", width=100)
+    st.image("https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/serie%20A.png", width=100)
 
 # Sous Menu Modèles
 def model():
     st.write('<p style="color:red;font-size: 40px;"><b>Mon Petit Modèle</b></p>', unsafe_allow_html=True)
     
     st.subheader("Modèle Gardien")
-    st.image("https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/ExtrasTreesGardien.png", width=500) 
-    st.image("https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/Feature%20Importance%20Gardien.png", width=500) 
+    st.image("https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/ExtrasTreesGardien.png", width=500) 
+    st.image("https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/Feature%20Importance%20Gardien.png", width=500) 
                 
     st.subheader("Modèle Offensifs")
-    st.image("https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/ExtrasTreesOffensifs.png", width=500) 
-    st.image("https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/Feature%20Importance%20Offensifs.png", width=500)
+    st.image("https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/ExtrasTreesOffensifs.png", width=500) 
+    st.image("https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/Feature%20Importance%20Offensifs.png", width=500)
     
     st.subheader("Modèle Defensifs")
-    st.image("https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/ExtrasTreesDefensifs.png", width=500) 
-    st.image("https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/Feature%20Importance%20Defensifs.png", width=500)
+    st.image("https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/ExtrasTreesDefensifs.png", width=500) 
+    st.image("https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/Feature%20Importance%20Defensifs.png", width=500)
              
 # Sous Menu Ma Petite Prédiction
 def entrain():
