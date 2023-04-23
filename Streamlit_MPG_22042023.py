@@ -30,7 +30,7 @@ def equipe():
     st.subheader("Ma Petite Equipe")
     st.header("Xavier Zinedine Girard Zidane")
     st.header("Delphine Pep Belly Guardiola")
-    st.image("https://github.com/XavierMpg/mon_petit_projet_mpg/blob/9db970e1b261b752f0353e15d4145a14641dd311/ZZ%20PG.png", width=300)
+    st.image("https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/ZZ%20PG.png", width=300)
         
 # Page Source de Données MPGStats
 def source():
