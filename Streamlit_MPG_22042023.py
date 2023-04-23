@@ -58,9 +58,9 @@ def echantillon():
 
 # Page Heatmap
 def heatmap():
-    datadef = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_defense_output_v210423.csv')
-    dataoff = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_attack_output_v210423.csv')
-    datagoal = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_goalkeeper_output_v210423.csv')
+    datadef = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_defense_output_v210423.csv')
+    dataoff = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_attack_output_v210423.csv')
+    datagoal = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_goalkeeper_output_v210423.csv')
     datafull = pd.concat([datadef, dataoff,datagoal])
     st.title("Ma Petite Corrélation")
     cols = ['Cote','Enchère moy', 'Note','Note série','Note 1 an', 'Nb match', 'Nb match série', 'Nb match 1 an', 'Variation', 'Var série', 'Var 1 an', 'But', 'Buts série', 'Buts 1 an', 'Titu', 'Titu série', 'Titu 1 an', 'Temps', 'Tps série', 'Tps 1 an', 'Tps moy', 'Tps moy série', 'Tps moy 1 an', 'Min/But', 'Min/But 1 an', 'Min note/but', 'Prix/but', 'Cleansheet', 'But/Peno', 'But/Coup-franc', 'But/surface', 'Pass decis.','Corner gagné', 'Passes', 'Ballons','Interceptions', 'Tacles', 'Duel', 'Fautes', 'But évité', 'Action stoppée', 'moy_j_10','Titu_4', 'Titu_10']
