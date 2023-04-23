@@ -53,7 +53,7 @@ def echantillon():
     st.image("https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/MPG%20confettis.png", width=300)
     csv_path = 'https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/dataset_mpg.csv'
     if st.button('Charger Mon Petit Exemple de Dataset MPG'):
-        df = pd.read_csv(csv_path)
+        df = pd.read_csv(csv_path, index = 0)
         st.write(df)
 
 # Page Heatmap
