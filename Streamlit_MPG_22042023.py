@@ -19,7 +19,7 @@ import pickle
 # Page d'accueil
 def home():
     st.title("Mon Petit Accueil")
-    st.image("https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/Titre.png", width=300)
+    st.image("https://github.com/XavierMpg/mon_petit_projet_mpg/blob/9db970e1b261b752f0353e15d4145a14641dd311/Titre.png", width=300)
     st.header("Mon Petit Gazon")
     st.write("Application de « fantasy football ». Jeu français qui s'appuie sur six compétitions européennes. L'objectif du jeu est de gagner le championnat de la ligue créée avec des matchs aller-retour. Le jeu se déroule en plusieurs étapes : création de la ligue, recrutement des équipes lors d'un mercato, championnat avec confrontations lors des matchs des journées réelles de championnat.")
     st.caption("Cliquez sur Mon Petit Menu Déroulant en haut à gauche du terrain")
@@ -29,7 +29,7 @@ def equipe():
     st.subheader("Ma Petite Equipe")
     st.header("Xavier Zinedine Girard Zidane")
     st.header("Delphine Pep Belly Guardiola")
-    #st.image("C:\Users\xavie\Documents\assets\ZZ PG.png", width=300)
+    st.image("https://github.com/XavierMpg/mon_petit_projet_mpg/blob/9db970e1b261b752f0353e15d4145a14641dd311/ZZ%20PG.png", width=300)
         
 # Page Source de Données MPGStats
 def source():
@@ -37,7 +37,7 @@ def source():
     st.write("Accès au site Source de nos données MPGstats")
     if st.button('Ma Petite Source de Données'):
         webbrowser.open_new_tab('https://www.mpgstats.fr/')
-    #st.image("C:\Users\xavie\Documents\assets\MPG Stade.png", width=300)
+    st.image("https://github.com/XavierMpg/mon_petit_projet_mpg/blob/9db970e1b261b752f0353e15d4145a14641dd311/MPG%20Stade.png", width=300)
     
 # Page Echantillon Dataset
 def echantillon():
