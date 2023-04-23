@@ -19,7 +19,7 @@ import pickle
 # Page d'accueil
 def home():
     st.title("Mon Petit Accueil")
-    st.image("https://github.com/XavierMpg/mon_petit_projet_mpg/blob/539b24ffc4e280bdf14b3594b02d5e1b49970349/Titre.png", width=300)
+    st.image("https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/bd5487c072c4c5c018619d277e725ea2e870feae/Titre.png", width=300)
     
     st.header("Mon Petit Gazon")
     st.write("Application de « fantasy football ». Jeu français qui s'appuie sur six compétitions européennes. L'objectif du jeu est de gagner le championnat de la ligue créée avec des matchs aller-retour. Le jeu se déroule en plusieurs étapes : création de la ligue, recrutement des équipes lors d'un mercato, championnat avec confrontations lors des matchs des journées réelles de championnat.")
