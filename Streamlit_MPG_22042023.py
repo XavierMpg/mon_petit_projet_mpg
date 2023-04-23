@@ -75,7 +75,7 @@ def heatmap():
 # Page Visualisation de la Cote en fonction de variables choisies
 def dataviz():
     st.write('<p style="color:red;font-size: 40px;"><b>Mes Petites DataViz</b></p>', unsafe_allow_html=True)
-    st.image("/Users/benbastian/Desktop/Streamlit MPG/assets/Zindine.png", width=300)
+    st.image("https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/Zindine.png", width=300)
     datadef = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_defense_output_v210423.csv')
     dataoff = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_attack_output_v210423.csv')
     datagoal = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_goalkeeper_output_v210423.csv')
