@@ -279,7 +279,7 @@ def pepite():
 
     # Si le bouton des défenseurs est cliqué
     if defbest_button:
-        df_def = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_def_to_upload.csv'',index_col=0)
+        df_def = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_def_to_upload.csv',index_col=0)
 
 # Charger le modèle à partir du fichier.pkl
         with open('model_def.pkl', 'rb') as f:
