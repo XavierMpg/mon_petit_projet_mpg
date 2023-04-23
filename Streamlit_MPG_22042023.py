@@ -76,9 +76,9 @@ def heatmap():
 def dataviz():
     st.write('<p style="color:red;font-size: 40px;"><b>Mes Petites DataViz</b></p>', unsafe_allow_html=True)
     st.image("https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/Zindine.png", width=300)
-    datadef = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_defense_output_v210423.csv')
-    dataoff = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_attack_output_v210423.csv')
-    datagoal = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_goalkeeper_output_v210423.csv')
+    datadef = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_defense_output_v210423.csv')
+    dataoff = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_attack_output_v210423.csv')
+    datagoal = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_goalkeeper_output_v210423.csv')
     datafull = pd.concat([datadef, dataoff,datagoal])
     
     variable = st.selectbox("Choisissez la variable à mettre en perspective avec la Cote", ["Note", "Nb match", "Nb match 1 an", "But", "Buts 1 an", "Titu", "Titu 1 an", "Tps moy", "Pass decis.", "Occas° créée", "Passes", "moy_j", "moy_j_10"])
@@ -88,7 +88,7 @@ def dataviz():
 # Page Data des Joueurs Trois sections
 def visualisation():
     st.title("Mes Petits Gardiens")
-    data = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_goalkeeper_output_v210423.csv')
+    data = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_goalkeeper_output_v210423.csv')
     joueurs = list(data['Joueur'].unique())
     selected_joueur = st.selectbox("Sélectionnez un joueur", joueurs)
     joueur_data = data[data['Joueur'] == selected_joueur]
@@ -98,7 +98,7 @@ def visualisation():
     st.write(selected_variables)
     
     st.title("Mes Petits Joueurs Défensifs")
-    data = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_defense_output_v210423.csv')
+    data = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_defense_output_v210423.csv')
     joueurs = list(data['Joueur'].unique())
     selected_joueur = st.selectbox("Sélectionnez un joueur", joueurs)
     joueur_data = data[data['Joueur'] == selected_joueur]
@@ -108,7 +108,7 @@ def visualisation():
     st.write(selected_variables)
 
     st.title("Mes Petits Joueurs Offensifs")
-    data = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_attack_output_v210423.csv')
+    data = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_attack_output_v210423.csv')
     joueurs = list(data['Joueur'].unique())
     selected_joueur = st.selectbox("Sélectionnez un joueur", joueurs)
     joueur_data = data[data['Joueur'] == selected_joueur]
@@ -178,7 +178,7 @@ def entrain():
 # Si le bouton des gardiens de but est cliqué
     if gk_button:
 # Charger les dataframes sur lesquels appliquer le modèle
-        df_gk = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_gk_to_upload.csv',index_col=0)
+        df_gk = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_gk_to_upload.csv',index_col=0)
 
 # Charger le modèle à partir du fichier.pkl
         with open('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/model_gk.pkl', 'rb') as f:
@@ -186,7 +186,7 @@ def entrain():
 
         predictions_gk = model_gk.predict(df_gk)
 
-        df_gk_output = pd.read_csv('https://github.com/XavierMpg/mon_petit_projet_mpg/blob/main/df_goalkeeper_mpg_v210423.csv',index_col=0)
+        df_gk_output = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_goalkeeper_mpg_v210423.csv',index_col=0)
 
         df_gk_output['cote_predite'] = predictions_gk
         df_gk_output['+/- value'] = df_gk_output['cote_predite'] - df_gk_output['Cote']
