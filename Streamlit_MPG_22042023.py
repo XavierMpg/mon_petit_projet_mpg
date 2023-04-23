@@ -181,16 +181,7 @@ def entrain():
         df_gk = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_gk_to_upload.csv',index_col=0)
 
 # Charger le modèle à partir du fichier.pkl
-       import requests
-
-            url = 'https://github.com/XavierMpg/mon_petit_projet_mpg/raw/main/model_gk.pkl'
-            filename = 'model_gk.pkl'
-
-            response = requests.get(url)
-        with open(filename, 'wb') as f:
-            f.write(response.content)
-       
-        with open('model_gk.pkl', 'rb') as f:
+           with open('model_gk.pkl', 'rb') as f:
             model_gk = pickle.load(f)
 
         predictions_gk = model_gk.predict(df_gk)
