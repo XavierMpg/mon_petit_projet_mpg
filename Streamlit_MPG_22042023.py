@@ -183,10 +183,10 @@ def entrain():
 # Charger le modèle à partir du fichier.pkl
        import requests
 
-    url = 'https://github.com/XavierMpg/mon_petit_projet_mpg/raw/main/model_gk.pkl'
-    filename = 'model_gk.pkl'
+            url = 'https://github.com/XavierMpg/mon_petit_projet_mpg/raw/main/model_gk.pkl'
+            filename = 'model_gk.pkl'
 
-    response = requests.get(url)
+            response = requests.get(url)
         with open(filename, 'wb') as f:
             f.write(response.content)
        
