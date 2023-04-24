@@ -91,8 +91,8 @@ def visualisation():
     st.title("Mes Petits Gardiens")
     data = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_goalkeeper_output_v210423.csv')
     joueurs = list(data['Joueur'].unique())
-    selected_joueur = st.selectbox("Sélectionnez un joueur", joueurs)
-    joueur_data = data[data['Joueur'] == selected_joueur]
+    selected_joueur_gk = st.selectbox("Sélectionnez un joueur", joueurs)
+    joueur_data = data[data['Joueur'] == selected_joueur_gk]
    
     # Sélection des variables pour le joueur sélectionné
     selected_variables = joueur_data[['Cote', 'Enchère moy', 'Note', 'Nb match', 'Nb match 1 an', 'But', 'Buts 1 an', 'Titu', 'Titu 1 an', 'Tps 1 an', 'Tps moy', 'Min/But', 'Min/But 1 an', 'But/Peno', 'But/Coup-franc', 'But/surface','Pass decis.', 'Occas° créée', 'Passes', 'moy_j', 'moy_j_10']]
@@ -101,8 +101,8 @@ def visualisation():
     st.title("Mes Petits Joueurs Défensifs")
     data = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_defense_output_v210423.csv')
     joueurs = list(data['Joueur'].unique())
-    selected_joueur = st.selectbox("Sélectionnez un joueur", joueurs)
-    joueur_data = data[data['Joueur'] == selected_joueur]
+    selected_joueur_def = st.selectbox("Sélectionnez un joueur", joueurs)
+    joueur_data = data[data['Joueur'] == selected_joueur_def]
    
     # Sélection des variables pour le joueur sélectionné
     selected_variables = joueur_data[['Cote', 'Enchère moy', 'Note', 'Nb match', 'Nb match 1 an', 'But', 'Buts 1 an', 'Titu', 'Titu 1 an', 'Tps 1 an', 'Tps moy', 'Min/But', 'Min/But 1 an', 'But/Peno', 'But/Coup-franc', 'But/surface','Pass decis.', 'Occas° créée', 'Passes', 'moy_j', 'moy_j_10']]
@@ -111,8 +111,8 @@ def visualisation():
     st.title("Mes Petits Joueurs Offensifs")
     data = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_attack_output_v210423.csv')
     joueurs = list(data['Joueur'].unique())
-    selected_joueur = st.selectbox("Sélectionnez un joueur", joueurs)
-    joueur_data = data[data['Joueur'] == selected_joueur]
+    selected_joueur_att = st.selectbox("Sélectionnez un joueur", joueurs)
+    joueur_data = data[data['Joueur'] == selected_joueur_att]
    
     # Sélection des variables pour le joueur sélectionné
     selected_variables = joueur_data[['Cote', 'Enchère moy', 'Note', 'Nb match', 'Nb match 1 an', 'But', 'Buts 1 an', 'Titu', 'Titu 1 an', 'Tps 1 an', 'Tps moy', 'Min/But', 'Min/But 1 an', 'But/Peno', 'But/Coup-franc', 'But/surface','Pass decis.', 'Occas° créée', 'Passes', 'moy_j', 'moy_j_10']]
