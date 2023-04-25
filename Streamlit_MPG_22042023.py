@@ -91,7 +91,7 @@ def visualisation():
     st.title("Mes Petits Gardiens")
     data = pd.read_csv('df_goalkeeper_output_v250423.csv')
     joueurs = list(data['Joueur'].unique())
-    selected_joueur_gk = st.selectbox("Sélectionnez un joueur", joueurs, key=st.experimental_unique_id())
+    selected_joueur_gk = st.selectbox("Sélectionnez un joueur", joueurs, key=hashlib.md5("joueur_gk".encode()).hexdigest())
     joueur_data = data[data['Joueur'] == selected_joueur_gk]
    
     # Sélection des variables pour le joueur sélectionné
@@ -101,7 +101,7 @@ def visualisation():
     st.title("Mes Petits Joueurs Défensifs")
     data = pd.read_csv('df_defense_output_v250423.csv')
     joueurs = list(data['Joueur'].unique())
-    selected_joueur_def = st.selectbox("Sélectionnez un joueur", joueurs, key=st.experimental_unique_id())
+    selected_joueur_def = st.selectbox("Sélectionnez un joueur", joueurs, key=hashlib.md5("joueur_def".encode()).hexdigest())
     joueur_data = data[data['Joueur'] == selected_joueur_def]
    
     # Sélection des variables pour le joueur sélectionné
@@ -111,7 +111,7 @@ def visualisation():
     st.title("Mes Petits Joueurs Offensifs")
     data = pd.read_csv('df_attack_output_v250423.csv')
     joueurs = list(data['Joueur'].unique())
-    selected_joueur_att = st.selectbox("Sélectionnez un joueur", joueurs, key=st.experimental_unique_id())
+    selected_joueur_att = st.selectbox("Sélectionnez un joueur", joueurs, key=hashlib.md5("joueur_att".encode()).hexdigest())
     joueur_data = data[data['Joueur'] == selected_joueur_att]
    
     # Sélection des variables pour le joueur sélectionné
