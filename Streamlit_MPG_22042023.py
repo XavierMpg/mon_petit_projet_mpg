@@ -99,7 +99,7 @@ def visualisation():
     st.write(selected_variables)
     
     st.title("Mes Petits Joueurs Défensifs")
-    data = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_defense_output_v250423.csv')
+    data = pd.read_csv('df_defense_output_v250423.csv')
     joueurs = list(data['Joueur'].unique())
     selected_joueur_def = st.selectbox("Sélectionnez un joueur", joueurs)
     joueur_data = data[data['Joueur'] == selected_joueur_def]
@@ -109,7 +109,7 @@ def visualisation():
     st.write(selected_variables)
 
     st.title("Mes Petits Joueurs Offensifs")
-    data = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_attack_output_v250423.csv')
+    data = pd.read_csv('df_attack_output_v250423.csv')
     joueurs = list(data['Joueur'].unique())
     selected_joueur_att = st.selectbox("Sélectionnez un joueur", joueurs)
     joueur_data = data[data['Joueur'] == selected_joueur_att]
