@@ -296,7 +296,7 @@ def pepite():
         df_def_output['+/- value'] = df_def_output['cote_predite'] - df_def_output['Cote']
         top_def = df_def_output.loc[df_def_output['Cote'] <= 5].sort_values(by='+/- value', ascending=False).head(10)
         # Afficher les 5 meilleurs attaquants
-        st.write("Les 5 meilleurs attaquants :")
+        st.write("Mes 10 pépites défensives :")
         st.write(top_def[['Joueur', 'Poste', 'Cote', 'cote_predite', '+/- value' , 'moy_j' , 'moy_j_10' , 'j-1' , 'j-2' , 'j-3' ,'j-4']])
     
 
