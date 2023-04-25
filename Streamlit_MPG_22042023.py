@@ -89,7 +89,7 @@ def dataviz():
 # Page Data des Joueurs Trois sections
 def visualisation():
     st.title("Mes Petits Gardiens")
-    data = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_goalkeeper_output_v250423.csv')
+    data = pd.read_csv('df_goalkeeper_output_v250423.csv')
     joueurs = list(data['Joueur'].unique())
     selected_joueur_gk = st.selectbox("Sélectionnez un joueur", joueurs)
     joueur_data = data[data['Joueur'] == selected_joueur_gk]
