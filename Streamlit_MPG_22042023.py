@@ -194,7 +194,7 @@ def entrain():
         df_gk_output['+/- value'] = df_gk_output['cote_predite'] - df_gk_output['Cote']
 
 # output base de données gardien avec cote
-        st.write(df_gk_output[['Joueur', 'Poste','Cote', 'cote_predite', '+/- value', 'moy_j' , 'moy_j_10' , 'j-1' , 'j-2' , j-3' ,'j-4']])
+        st.write(df_gk_output[['Joueur', 'Poste','Cote', 'cote_predite', '+/- value', 'moy_j' , 'moy_j_10' , 'j-1' , 'j-2' , 'j-3' ,'j-4']])
 
 # Si le bouton des attaquants est cliqué
     if att_button:
@@ -214,7 +214,7 @@ def entrain():
         df_att_output['+/- value'] = df_att_output['cote_predite'] - df_att_output['Cote']
 
 # output base de données attaque avec cote
-        st.write(df_att_output[['Joueur', 'Poste','Cote', 'cote_predite', '+/- value', 'moy_j' , 'moy_j_10' , 'j-1' , 'j-2' , j-3' ,'j-4']])
+        st.write(df_att_output[['Joueur', 'Poste','Cote', 'cote_predite', '+/- value', 'moy_j' , 'moy_j_10' , 'j-1' , 'j-2' , 'j-3' ,'j-4']])
 
 # Si le bouton des défenseurs est cliqué
     if def_button:
@@ -233,7 +233,7 @@ def entrain():
         df_def_output['+/- value'] = df_def_output['cote_predite'] - df_def_output['Cote']
         
         # output base de données attaque avec cote
-        st.write(df_def_output[['Joueur', 'Poste','Cote', 'cote_predite', '+/- value', 'moy_j' , 'moy_j_10' , 'j-1' , 'j-2' , j-3' ,'j-4']])
+        st.write(df_def_output[['Joueur', 'Poste','Cote', 'cote_predite', '+/- value', 'moy_j' , 'moy_j_10' , 'j-1' , 'j-2' , 'j-3' ,'j-4']])
 
 #Sous Menu Pepite
 
@@ -261,7 +261,7 @@ def pepite():
         top_gk = df_gk_output.loc[df_gk_output['Cote'] <= 5].sort_values(by='+/- value', ascending=False).head(5)
         # Afficher les 5 meilleurs gardiens de but
         st.write("Mes 5 petits gardiens :")
-        st.write(top_gk[['Joueur', 'Poste', 'Cote', 'cote_predite', '+/- value' , 'moy_j' , 'moy_j_10' , 'j-1' , 'j-2' , j-3' ,'j-4']])
+        st.write(top_gk[['Joueur', 'Poste', 'Cote', 'cote_predite', '+/- value' , 'moy_j' , 'moy_j_10' , 'j-1' , 'j-2' , 'j-3' ,'j-4']])
 
     # Si le bouton des attaquants est cliqué
     if attbest_button:
@@ -279,7 +279,7 @@ def pepite():
         top_att = df_att_output.loc[df_att_output['Cote'] <= 5].sort_values(by='+/- value', ascending=False).head(10) 
         # Afficher les 5 meilleurs attaquants
         st.write("Mes 10 pépites offensives :")
-        st.write(top_att[['Joueur', 'Poste', 'Cote', 'cote_predite', '+/- value' , 'moy_j' , 'moy_j_10' , 'j-1' , 'j-2' , j-3' ,'j-4']])
+        st.write(top_att[['Joueur', 'Poste', 'Cote', 'cote_predite', '+/- value' , 'moy_j' , 'moy_j_10' , 'j-1' , 'j-2' , 'j-3' ,'j-4']])
 
     # Si le bouton des défenseurs est cliqué
     if defbest_button:
@@ -297,7 +297,7 @@ def pepite():
         top_def = df_def_output.loc[df_def_output['Cote'] <= 5].sort_values(by='+/- value', ascending=False).head(10)
         # Afficher les 5 meilleurs attaquants
         st.write("Les 5 meilleurs attaquants :")
-        st.write(top_att[['Joueur', 'Poste', 'Cote', 'cote_predite', '+/- value' , 'moy_j' , 'moy_j_10' , 'j-1' , 'j-2' , j-3' ,'j-4']])
+        st.write(top_att[['Joueur', 'Poste', 'Cote', 'cote_predite', '+/- value' , 'moy_j' , 'moy_j_10' , 'j-1' , 'j-2' , 'j-3' ,'j-4']])
     
 
 # Menu déroulant
