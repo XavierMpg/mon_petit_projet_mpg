@@ -258,9 +258,10 @@ def pepite():
         df_gk_output = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_goalkeeper_mpg_v250423.csv',index_col=0)
         df_gk_output['cote_predite'] = predictions_gk
         df_gk_output['+/- value'] = df_gk_output['cote_predite'] - df_gk_output['Cote']
+        top_gk = df_gk_output.loc[df_gk_output['Cote'] <= 5].sort_values(by='+/- value', ascending=False).head(5)
         # Afficher les 5 meilleurs gardiens de but
         st.write("Les 5 meilleurs gardiens de but :")
-        st.write(df_gk_output[['Joueur', 'Poste', 'Cote', 'cote_predite', '+/- value']].sort_values('cote_predite', ascending=False).head(5))
+        st.write(top_gk[['Joueur', 'Poste', 'Cote', 'cote_predite', '+/- value']])
 
     # Si le bouton des attaquants est cliqué
     if attbest_button:
