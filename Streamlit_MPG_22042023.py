@@ -192,18 +192,20 @@ def entrain():
 # Charger le modèle à partir du fichier.pkl
         with open('model_gk.pkl', 'rb') as f:
             model_gk = pickle.load(f)
-# Filtrer le dataframe sur la variable 'cote'
-        df_gk_filtered = df_gk[(df_gk['Cote'] >= min_value) & (df_gk['Cote'] <= max_value)]
+
 
 # Appliquer le modèle sur le dataframe filtré
-        predictions_gk = model_gk.predict(df_gk_filtered)
+        predictions_gk = model_gk.predict(df_gk)
 
 # Chargement du dataset de base        
         df_gk_output = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_goalkeeper_mpg_v250423.csv',index_col=0)
-    
+   
 # Ajout au dataset de base de la Cote prédite et de la plus value
         df_gk_output['cote_predite'] = predictions_gk
         df_gk_output['+/- value'] = df_gk_output['cote_predite'] - df_gk_output['Cote']
+
+# Filtrer le dataframe sur la variable 'cote'
+        df_gk_output = df_gk_output[(df_gk_output['Cote'] >= min_value) & (df_gk_output['Cote'] <= max_value)]
         
 # output base de données gardien avec cote
         st.write(df_gk_output[['Joueur', 'Poste','Cote', 'cote_predite', '+/- value', 'moy_j' , 'moy_j_10' , 'j-1' , 'j-2' , 'j-3' ,'j-4']])
