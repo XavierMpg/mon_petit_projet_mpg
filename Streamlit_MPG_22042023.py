@@ -248,7 +248,7 @@ def entrain():
             model_def = pickle.load(f)
 
 # Appliquer le modèle sur le dataframe 
-        predictions_def = model_att.predict(df_def)
+        predictions_def = model_def.predict(df_def)
     
  # Ouverture du dataset de base
         df_def_output = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_defense_mpg_v250423.csv',index_col=0)
