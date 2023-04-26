@@ -184,6 +184,7 @@ def entrain():
     att_button = st.button("Attaquants")
     def_button = st.button("Défenseurs")
 
+    
 # Si le bouton des gardiens de but est cliqué
     if gk_button:
 # Charger les dataframes sur lesquels appliquer le modèle
@@ -193,8 +194,7 @@ def entrain():
         with open('model_gk.pkl', 'rb') as f:
             model_gk = pickle.load(f)
 
-
-# Appliquer le modèle sur le dataframe filtré
+# Appliquer le modèle sur le dataframe 
         predictions_gk = model_gk.predict(df_gk)
 
 # Chargement du dataset de base        
@@ -204,12 +204,13 @@ def entrain():
         df_gk_output['cote_predite'] = predictions_gk
         df_gk_output['+/- value'] = df_gk_output['cote_predite'] - df_gk_output['Cote']
 
-# Filtrer le dataframe sur la variable 'cote'
+# Filtrer le dataframe sur la variable 'Cote'
         df_gk_output = df_gk_output[(df_gk_output['Cote'] >= min_value) & (df_gk_output['Cote'] <= max_value)]
         
 # output base de données gardien avec cote
         st.write(df_gk_output[['Joueur', 'Poste','Cote', 'cote_predite', '+/- value', 'moy_j' , 'moy_j_10' , 'j-1' , 'j-2' , 'j-3' ,'j-4']])
 
+    
 # Si le bouton des attaquants est cliqué
     if att_button:
 
@@ -220,8 +221,8 @@ def entrain():
         with open('model_att.pkl', 'rb') as f:
             model_att = pickle.load(f)
 
-# Appliquer le modèle sur le dataframe filtré
-        predictions_att = model_att.predict(df_att_filtered)
+# Appliquer le modèle sur le dataframe 
+        predictions_att = model_att.predict(df_att)
     
  # Ouverture du dataset de base
         df_att_output = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_attack_mpg_v250423.csv',index_col=0)
@@ -236,6 +237,7 @@ def entrain():
 # output base de données attaque avec cote
         st.write(df_att_output[['Joueur', 'Poste','Cote', 'cote_predite', '+/- value', 'moy_j' , 'moy_j_10' , 'j-1' , 'j-2' , 'j-3' ,'j-4']])
 
+    
 # Si le bouton des défenseurs est cliqué
     if def_button:
 # Charger les dataframes sur lesquels appliquer le modèle
@@ -245,23 +247,23 @@ def entrain():
         with open('model_def.pkl', 'rb') as f:
             model_def = pickle.load(f)
 
-
-# Appliquer le modèle sur le dataframe filtré
-        predictions_def = model_att.predict(df_def_filtered)
-
+# Appliquer le modèle sur le dataframe 
+        predictions_def = model_att.predict(df_def)
     
  # Ouverture du dataset de base
         df_def_output = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_defense_mpg_v250423.csv',index_col=0)
 
+ # Ajout de la cote prédite et de la plus value
         df_def_output['cote_predite'] = predictions_def
         df_def_output['+/- value'] = df_def_output['cote_predite'] - df_def_output['Cote']
  
-# Filtrer le dataframe sur la variable 'cote'
+# Filtrer le dataframe sur la variable 'Cote'
         df_def_output = df_def_output[(df_def_output['Cote'] >= min_value) & (df_def_output['Cote'] <= max_value)]
     
  # output base de données attaque avec cote
         st.write(df_def_output[['Joueur', 'Poste','Cote', 'cote_predite', '+/- value', 'moy_j' , 'moy_j_10' , 'j-1' , 'j-2' , 'j-3' ,'j-4']])
 
+    
 #Sous Menu Pepite
 
 def pepite():
