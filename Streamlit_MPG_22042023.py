@@ -270,9 +270,9 @@ def pepite():
     st.header("Mes Petites Pépites")
     
     # Afficher les boutons pour chaque groupe de joueur
-    gkbest_button = st.button("Meilleures Côtes Gardiens de but")
-    attbest_button = st.button("Meilleures Côtes Attaquants")
-    defbest_button = st.button("Meilleures Côtes Défenseurs")
+    gkbest_button = st.button("Mes petits gardiens")
+    attbest_button = st.button("Mes petits attaquants")
+    defbest_button = st.button("Mes petits défenseurs")
 
     # Si le bouton des gardiens de but est cliqué
     if gkbest_button:
