@@ -244,7 +244,7 @@ def entrain():
             model_def = pickle.load(f)
 
 # Filtrer le dataframe sur la variable 'cote'
-        df_def_filtered = df_def[(df_att['Cote'] >= min_value) & (df_def['Cote'] <= max_value)]
+        df_def_filtered = df_def[(df_def['Cote'] >= min_value) & (df_def['Cote'] <= max_value)]
 
 # Appliquer le modèle sur le dataframe filtré
         predictions_def = model_att.predict(df_def_filtered)
