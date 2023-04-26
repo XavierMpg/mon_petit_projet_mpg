@@ -94,6 +94,11 @@ def visualisation():
     joueurs = list(data['Joueur'].unique())
     selected_joueur_gk = st.selectbox("Sélectionnez un joueur", joueurs, key=hashlib.md5("joueur_gk".encode()).hexdigest())
     joueur_data = data[data['Joueur'] == selected_joueur_gk]
+    
+    # Ajouter une slide bar pour la variable "Cote"
+    cote_min, cote_max = joueur_data['Cote'].min(), joueur_data['Cote'].max()
+    selected_cote = st.slider("Sélectionnez une cote", cote_min, cote_max, cote_min)
+    joueur_data = joueur_data[joueur_data['Cote'] == selected_cote]
    
     # Sélection des variables pour le joueur sélectionné
     selected_variables = joueur_data[['Cote', 'Enchère moy', 'Note', 'Nb match', 'Nb match 1 an', 'But', 'Buts 1 an', 'Titu', 'Titu 1 an', 'Tps 1 an', 'Tps moy', 'Min/But', 'Min/But 1 an', 'But/Peno', 'But/Coup-franc', 'But/surface','Pass decis.', 'Occas° créée', 'Passes', 'moy_j', 'moy_j_10']]
