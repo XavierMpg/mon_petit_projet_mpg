@@ -171,11 +171,7 @@ def model():
              
 # Sous Menu Ma Petite Prédiction
 def entrain():
-    st.header("Ma Petite Prédiction")
-
- # Ajouter un slider pour sélectionner la taille de l'échantillon
-    sample_size = st.slider("Taille de l'échantillon", min_value=1, max_value=55, value=55)
-    
+    st.header("Ma Petite Prédiction")  
     
 # Afficher les boutons pour chaque groupe de joueur
     gk_button = st.button("Gardiens de but")
