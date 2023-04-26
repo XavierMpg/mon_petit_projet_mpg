@@ -173,6 +173,11 @@ def model():
 def entrain():
     st.header("Ma Petite Prédiction")  
     
+ # Ajouter un widget Slider pour filtrer le dataframe sur la variable 'Cote'
+    min_value = st.slider('Filtrer sur la variable Cote - Valeur minimale', 0 , 60 , 0 )
+    max_value = st.slider('Filtrer sur la variable Cote - Valeur maximale', 0 , 60 , 60 )
+    
+    
 # Afficher les boutons pour chaque groupe de joueur
     gk_button = st.button("Gardiens de but")
     att_button = st.button("Attaquants")
@@ -186,19 +191,18 @@ def entrain():
 # Charger le modèle à partir du fichier.pkl
         with open('model_gk.pkl', 'rb') as f:
             model_gk = pickle.load(f)
+# Filtrer le dataframe sur la variable 'cote'
+        df_gk_filtered = df_gk[(df_gk['Cote'] >= min_value) & (df_gk['Cote'] <= max_value)]
 
-        predictions_gk = model_gk.predict(df_gk)
+# Appliquer le modèle sur le dataframe filtré
+        predictions_gk = model_gk.predict(df_gk_filtered)
 
+# Chargement du dataset de base        
         df_gk_output = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_goalkeeper_mpg_v250423.csv',index_col=0)
-
+    
+# Ajout au dataset de base de la Cote prédite et de la plus value
         df_gk_output['cote_predite'] = predictions_gk
         df_gk_output['+/- value'] = df_gk_output['cote_predite'] - df_gk_output['Cote']
-
-# Ajouter un widget Slider pour filtrer le dataframe sur la variable 'Cote'
-        min_value, max_value = st.slider('Filtrer sur la variable Cote', float(df_gk_output['Cote'].min()), float(df_gk_output['Cote'].max()), (float(df_gk_output['Cote'].min()), float(df_gk_output['Cote'].max())))
-
-# Filtrer le dataframe sur la variable 'cote'
-        df_gk_output_filtered = df_gk_output[(df_gk_output['Cote'] >= min_value) & (df_gk_output['Cote'] <= max_value)]
         
 # output base de données gardien avec cote
         st.write(df_gk_output[['Joueur', 'Poste','Cote', 'cote_predite', '+/- value', 'moy_j' , 'moy_j_10' , 'j-1' , 'j-2' , 'j-3' ,'j-4']])
@@ -213,10 +217,17 @@ def entrain():
         with open('model_att.pkl', 'rb') as f:
             model_att = pickle.load(f)
 
-        predictions_att = model_att.predict(df_att)
+# Filtrer le dataframe sur la variable 'cote'
+        df_att_filtered = df_att[(df_att['Cote'] >= min_value) & (df_att['Cote'] <= max_value)]
 
+# Appliquer le modèle sur le dataframe filtré
+        predictions_att = model_att.predict(df_att_filtered)
+
+    
+ # Ouverture du dataset de base
         df_att_output = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_attack_mpg_v250423.csv',index_col=0)
 
+ # Ajout de la Cote prédite et de la plus value
         df_att_output['cote_predite'] = predictions_att
         df_att_output['+/- value'] = df_att_output['cote_predite'] - df_att_output['Cote']
 
@@ -232,8 +243,14 @@ def entrain():
         with open('model_def.pkl', 'rb') as f:
             model_def = pickle.load(f)
 
-        predictions_def = model_def.predict(df_def)
+# Filtrer le dataframe sur la variable 'cote'
+        df_def_filtered = df_def[(df_att['Cote'] >= min_value) & (df_def['Cote'] <= max_value)]
 
+# Appliquer le modèle sur le dataframe filtré
+        predictions_def = model_att.predict(df_def_filtered)
+
+    
+ # Ouverture du dataset de base
         df_def_output = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_defense_mpg_v250423.csv',index_col=0)
 
         df_def_output['cote_predite'] = predictions_def
