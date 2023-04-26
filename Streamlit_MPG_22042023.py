@@ -220,12 +220,8 @@ def entrain():
         with open('model_att.pkl', 'rb') as f:
             model_att = pickle.load(f)
 
-# Filtrer le dataframe sur la variable 'cote'
-        df_att_filtered = df_att[(df_att['Cote'] >= min_value) & (df_att['Cote'] <= max_value)]
-
 # Appliquer le modèle sur le dataframe filtré
         predictions_att = model_att.predict(df_att_filtered)
-
     
  # Ouverture du dataset de base
         df_att_output = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_attack_mpg_v250423.csv',index_col=0)
@@ -234,6 +230,9 @@ def entrain():
         df_att_output['cote_predite'] = predictions_att
         df_att_output['+/- value'] = df_att_output['cote_predite'] - df_att_output['Cote']
 
+# Filtrer le dataframe sur la variable 'cote'
+        df_att_output = df_att_output[(df_att_output['Cote'] >= min_value) & (df_att_output['Cote'] <= max_value)]
+        
 # output base de données attaque avec cote
         st.write(df_att_output[['Joueur', 'Poste','Cote', 'cote_predite', '+/- value', 'moy_j' , 'moy_j_10' , 'j-1' , 'j-2' , 'j-3' ,'j-4']])
 
@@ -246,8 +245,6 @@ def entrain():
         with open('model_def.pkl', 'rb') as f:
             model_def = pickle.load(f)
 
-# Filtrer le dataframe sur la variable 'cote'
-        df_def_filtered = df_def[(df_def['Cote'] >= min_value) & (df_def['Cote'] <= max_value)]
 
 # Appliquer le modèle sur le dataframe filtré
         predictions_def = model_att.predict(df_def_filtered)
@@ -258,8 +255,11 @@ def entrain():
 
         df_def_output['cote_predite'] = predictions_def
         df_def_output['+/- value'] = df_def_output['cote_predite'] - df_def_output['Cote']
-        
-        # output base de données attaque avec cote
+ 
+# Filtrer le dataframe sur la variable 'cote'
+        df_def_output = df_def_output[(df_def_output['Cote'] >= min_value) & (df_def_output['Cote'] <= max_value)]
+    
+ # output base de données attaque avec cote
         st.write(df_def_output[['Joueur', 'Poste','Cote', 'cote_predite', '+/- value', 'moy_j' , 'moy_j_10' , 'j-1' , 'j-2' , 'j-3' ,'j-4']])
 
 #Sous Menu Pepite
