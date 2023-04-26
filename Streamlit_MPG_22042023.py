@@ -195,13 +195,13 @@ def entrain():
         df_gk_output['+/- value'] = df_gk_output['cote_predite'] - df_gk_output['Cote']
 
 # Ajouter un widget Slider pour filtrer le dataframe sur la variable 'Cote'
-        min_value, max_value = st.slider('Filtrer sur la variable Cote', float(df_gk_output['Cote'].min()), float(df_gk_output['Cote'].max()), (float(df_gk_output['Cote'].min()), float(df_gk_output['Cote'].max())))
+        #min_value, max_value = st.slider('Filtrer sur la variable Cote', float(df_gk_output['Cote'].min()), float(df_gk_output['Cote'].max()), (float(df_gk_output['Cote'].min()), float(df_gk_output['Cote'].max())))
 
 # Filtrer le dataframe sur la variable 'cote'
-        df_gk_output_filtered = df_gk_output[(df_gk_output['Cote'] >= min_value) & (df_gk_output['Cote'] <= max_value)]
+        #df_gk_output_filtered = df_gk_output[(df_gk_output['Cote'] >= min_value) & (df_gk_output['Cote'] <= max_value)]
         
 # output base de données gardien avec cote
-        st.write(df_gk_output_filtered[['Joueur', 'Poste','Cote', 'cote_predite', '+/- value', 'moy_j' , 'moy_j_10' , 'j-1' , 'j-2' , 'j-3' ,'j-4']])
+        st.write(df_gk_output[['Joueur', 'Poste','Cote', 'cote_predite', '+/- value', 'moy_j' , 'moy_j_10' , 'j-1' , 'j-2' , 'j-3' ,'j-4']])
 
 # Si le bouton des attaquants est cliqué
     if att_button:
