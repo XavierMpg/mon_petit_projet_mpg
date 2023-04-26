@@ -173,9 +173,10 @@ def model():
 def entrain():
     st.header("Ma Petite Prédiction")  
     
- # Ajouter un widget Slider pour filtrer le dataframe sur la variable 'Cote'
-    min_value = st.slider('Filtrer sur la variable Cote - Valeur minimale', 0 , 60 , 0 )
-    max_value = st.slider('Filtrer sur la variable Cote - Valeur maximale', 0 , 60 , 60 )
+# Ajouter un widget Range Slider pour filtrer le dataframe sur la variable 'Cote'
+    cote_range = st.slider('Filtrer sur la variable Cote', 0 , 60 , (0, 60))
+    min_value = cote_range[0]
+    max_value = cote_range[1]
     
     
 # Afficher les boutons pour chaque groupe de joueur
