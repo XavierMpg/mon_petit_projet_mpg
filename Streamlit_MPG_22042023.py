@@ -65,7 +65,7 @@ def heatmap():
     datafull = pd.concat([datadef, dataoff,datagoal])
     st.title("Ma Petite Corrélation")
     cols = ['Cote','Enchère moy', 'Note','Note série','Note 1 an', 'Nb match', 'Nb match série', 'Nb match 1 an', 'Variation', 'Var série', 'Var 1 an', 'But', 'Buts série', 'Buts 1 an', 'Titu', 'Titu série', 'Titu 1 an', 'Temps', 'Tps série', 'Tps 1 an', 'Tps moy', 'Tps moy série', 'Tps moy 1 an', 'Min/But', 'Min/But 1 an', 'Min note/but', 'Prix/but', 'Cleansheet', 'But/Peno', 'But/Coup-franc', 'But/surface', 'Pass decis.','Corner gagné', 'Passes', 'Ballons','Interceptions', 'Tacles', 'Duel', 'Fautes', 'But évité', 'Action stoppée', 'moy_j_10','Titu_4', 'Titu_10']
-    top_10_corr = datafull.corr((numeric_only=True))['Cote'].abs().nlargest(10).index
+    top_10_corr = datafull.corr(numeric_only=True)['Cote'].abs().nlargest(10).index
     data = datafull[top_10_corr]
     corr_matrix = data.corr(numeric_only=True)
     fig, ax = plt.subplots(figsize=(12, 8))
