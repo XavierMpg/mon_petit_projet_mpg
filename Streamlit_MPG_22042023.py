@@ -59,11 +59,11 @@ def echantillon():
 
 # Page Heatmap
 def heatmap():
+    st.write('<p style="color:green;font-size: 40px;"><b>Ma Petite Corrélation</b></p>', unsafe_allow_html=True)
     datadef = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_defense_output_v210423.csv')
     dataoff = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_attack_output_v210423.csv')
     datagoal = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_goalkeeper_output_v210423.csv')
     datafull = pd.concat([datadef, dataoff,datagoal])
-    st.title("Ma Petite Corrélation")
     cols = ['Cote','Enchère moy', 'Note','Note série','Note 1 an', 'Nb match', 'Nb match série', 'Nb match 1 an', 'Variation', 'Var série', 'Var 1 an', 'But', 'Buts série', 'Buts 1 an', 'Titu', 'Titu série', 'Titu 1 an', 'Temps', 'Tps série', 'Tps 1 an', 'Tps moy', 'Tps moy série', 'Tps moy 1 an', 'Min/But', 'Min/But 1 an', 'Min note/but', 'Prix/but', 'Cleansheet', 'But/Peno', 'But/Coup-franc', 'But/surface', 'Pass decis.','Corner gagné', 'Passes', 'Ballons','Interceptions', 'Tacles', 'Duel', 'Fautes', 'But évité', 'Action stoppée', 'moy_j_10','Titu_4', 'Titu_10']
     top_10_corr = datafull.corr(numeric_only=True)['Cote'].abs().nlargest(10).index
     data = datafull[top_10_corr]
@@ -120,8 +120,8 @@ def visualisation():
     st.write(selected_variables)
     
 def train():
-    st.title("Mon Petit Entrainement")
-    
+    st.write('<p style="color:blue;font-size: 40px;"><b>Mon Petit Entrainement</b></p>', unsafe_allow_html=True)
+       
     # Définir les options du menu déroulant
     options = ["Mes Petites Datas", "Mes Petits Modèles", "Ma Petite Prédiction"]
 
@@ -138,7 +138,7 @@ def train():
              
 # Sous Menu Mes Petites Datas
 def data():
-    st.header("Mes Petites Datas")
+    st.write('<p style="color:red;font-size: 40px;"><b>Mes Petites Datas</b></p>', unsafe_allow_html=True)
     st.write("Téléchargement des datas à jour")
     if st.button('LIGUE 1'):
         webbrowser.open_new_tab('https://www.mpgstats.fr/top/Ligue-1/custom')
@@ -171,8 +171,8 @@ def model():
              
 # Sous Menu Ma Petite Prédiction
 def entrain():
-    st.header("Ma Petite Prédiction")  
-    
+    st.write('<p style="color:blue;font-size: 40px;"><b>Ma Petite Prédiction</b></p>', unsafe_allow_html=True)
+        
 # Ajouter un widget Range Slider pour filtrer le dataframe sur la variable 'Cote'
     cote_range = st.slider('Filtrer sur la variable Cote', 0 , 60 , (0, 60))
     min_value = cote_range[0]
@@ -267,8 +267,9 @@ def entrain():
 #Sous Menu Pepite
 
 def pepite():
-    st.header("Mes Petites Pépites")
     
+    st.write('<p style="color:yellow;font-size: 40px;"><b>Mes Petites Pépites</b></p>', unsafe_allow_html=True)
+        
     # Afficher les boutons pour chaque groupe de joueur
     gkbest_button = st.button("Mes petits gardiens")
     attbest_button = st.button("Mes petits attaquants")
