@@ -89,7 +89,7 @@ def dataviz():
         
 # Page Data des Joueurs Trois sections
 def visualisation():
-    st.header("Mes Petits Gardiens")
+    st.write('<p style="color:blue;font-size: 40px;"><b>Mes Petits Gardiens</b></p>', unsafe_allow_html=True)
     data = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_goalkeeper_output_v250423.csv')
     joueurs = list(data['Joueur'].unique())
     selected_joueur_gk = st.selectbox("Sélectionnez un joueur", joueurs, key=hashlib.md5("joueur_gk".encode()).hexdigest())
@@ -99,7 +99,7 @@ def visualisation():
     selected_variables = joueur_data[['Cote', 'Enchère moy', 'Note', 'Nb match', 'Nb match 1 an', 'But', 'Buts 1 an', 'Titu', 'Titu 1 an', 'Tps 1 an', 'Tps moy', 'Min/But', 'Min/But 1 an', 'But/Peno', 'But/Coup-franc', 'But/surface','Pass decis.', 'Occas° créée', 'Passes', 'moy_j', 'moy_j_10']]
     st.write(selected_variables)
     
-    st.header("Mes Petits Joueurs Défensifs")
+    st.write('<p style="color:red;font-size: 40px;"><b>Mes Petits Joueurs Défensifs</b></p>', unsafe_allow_html=True)
     data = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_defense_output_v250423.csv')
     joueurs = list(data['Joueur'].unique())
     selected_joueur_def = st.selectbox("Sélectionnez un joueur", joueurs, key=hashlib.md5("joueur_def".encode()).hexdigest())
@@ -109,7 +109,7 @@ def visualisation():
     selected_variables = joueur_data[['Cote', 'Enchère moy', 'Note', 'Nb match', 'Nb match 1 an', 'But', 'Buts 1 an', 'Titu', 'Titu 1 an', 'Tps 1 an', 'Tps moy', 'Min/But', 'Min/But 1 an', 'But/Peno', 'But/Coup-franc', 'But/surface','Pass decis.', 'Occas° créée', 'Passes', 'moy_j', 'moy_j_10']]
     st.write(selected_variables)
 
-    st.header("Mes Petits Joueurs Offensifs")
+    st.write('<p style="color:blue;font-size: 40px;"><b>Mes Petits Joueurs Offensifs</b></p>', unsafe_allow_html=True)
     data = pd.read_csv('https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/df_attack_output_v250423.csv')
     joueurs = list(data['Joueur'].unique())
     selected_joueur_att = st.selectbox("Sélectionnez un joueur", joueurs, key=hashlib.md5("joueur_att".encode()).hexdigest())
