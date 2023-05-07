@@ -269,7 +269,8 @@ def entrain():
 def pepite():
     
     st.write('<p style="color:yellow;font-size: 40px;"><b>Mes Petites Pépites</b></p>', unsafe_allow_html=True)
-        
+    st.image("https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/blob/main/Xavi%20Simmons.png", width=500) 
+
     # Afficher les boutons pour chaque groupe de joueur
     gkbest_button = st.button("Mes petits gardiens")
     attbest_button = st.button("Mes petits attaquants")
