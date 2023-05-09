@@ -120,7 +120,7 @@ def visualisation():
     st.write(selected_variables)
     
 def train():
-    st.write('<p style="color:blue;font-size: 40px;"><b>Mon Petit Entrainement</b></p>', unsafe_allow_html=True)
+    st.write('<p style="color:red;font-size: 40px;"><b>Mon Petit Entrainement</b></p>', unsafe_allow_html=True)
        
     # Définir les options du menu déroulant
     options = ["Mes Petites Datas", "Mes Petits Modèles", "Ma Petite Prédiction"]
@@ -268,7 +268,7 @@ def entrain():
 
 def pepite():
     
-    st.write('<p style="color:yellow;font-size: 40px;"><b>Mes Petites Pépites</b></p>', unsafe_allow_html=True)
+    st.write('<p style="color:red;font-size: 40px;"><b>Mes Petites Pépites</b></p>', unsafe_allow_html=True)
     st.image("https://raw.githubusercontent.com/XavierMpg/mon_petit_projet_mpg/main/Xavi%20Simmons.png", width=500) 
 
     # Afficher les boutons pour chaque groupe de joueur
